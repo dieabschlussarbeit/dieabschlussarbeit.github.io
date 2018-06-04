@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<form id="convForm" class="convFormDynamic">
+			<select class="options dragscroll">
+				<!--<option class="option" onclick="submitFunction()">Fachbereich:</option>-->
+				<option class="option" onclick="submitFunction()">Ingenieurwissenschaften</option>
+				<option class="option" onclick="submitFunction()">Wirtschaftswissenschaften</option>
+				<option class="option" onclick="submitFunction()">Naturwissenschaften</option>
+				<option class="option" onclick="submitFunction()">Informatik</option>
+				<option class="option" onclick="submitFunction()">Weitere Fächer</option>
+			</select>
+			<button type="submit" class="submit"">▶ Los geht's</button>
+		</form>
+	</div>
+	<script>
+		function submitFunction() {
+			//$('#convForm > button').click();
+			//console.log("Testa");
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			var initialClick = true;
+			$('#convForm > select').on('click', function(){
+				console.log('ING');
+				if(navigator.userAgent.indexOf("Chrome")!=-1){
+					console.log("click");
+					if(initialClick){
+						console.log("no submit - do nothing");
+						initialClick = false;
+					}
+					else{
+						console.log("submit");
+						console.log($(this).find(':selected').val());
+						setTimeout(function(){$('#convForm > button').click();},3000);
+					}
+					
+				}
+			});
+		});
+	</script>
+	
+</body>
+</html>
