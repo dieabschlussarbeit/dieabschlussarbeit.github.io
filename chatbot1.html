@@ -368,6 +368,7 @@ Was ist dein Fachbereich?">
 			$(window).on('load', function() {
 			if ($('div.message:nth-child(9)').length > 0) {
 				console.log('Letzte Frage erreicht, blende Textfeld + Button ein')
+				$('#userInput').css('font-weight', 'bold');
 				$('.submit').show();
 				$('#userInput').show();
 			}
