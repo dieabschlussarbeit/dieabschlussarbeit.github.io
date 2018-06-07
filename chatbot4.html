@@ -206,7 +206,8 @@ button.submit {
 																		<div class="message to ready">
 																			In welchem Bundesland soll das Unternehmen sein?
 																		</div>
-																		<select name="bundesland" data-conv-question="In welchem Bundesland soll das Unternehmen sein?">
+																		<select name="bundesland" class="bundesland" data-conv-question="In welchem Bundesland soll das Unternehmen sein?">
+																			<option value="Auswahl Bundesland:">Auswahl Bundesland:</option>
 																			<option value="BW">Baden-Württemberg</option>
 																			<option value="BY">Bayern</option>
 																			<option value="BE">Berlin</option>
@@ -334,7 +335,26 @@ button.submit {
 				}
 				else{
 					lastSelectedOption2=selected;
-					if($('selected.fachbereich').val() != "Auswahl Fachbereich:" & $('selected.studiengang').val() != 'Auswahl Studiengang:'){
+					if($('select.fachbereich').val() != "Auswahl Fachbereich:" & $('select.studiengang').val() != 'Auswahl Studiengang:' & $('select.bundesland').val() != 'Auswahl Bundesland:'){
+						$('button.submit').removeAttr("disabled");
+					}
+				}
+
+			});
+			$('.bundesland').change(function() {
+				var selected = $(this).val();
+
+				if(selected == 'Auswahl Bundesland:'){
+					//removeOptionsAndAddChoice();
+					//alert('Bitte wähle ein Bundesland aus.');
+					$(this).val(lastSelectedOption2);
+				}
+				else{
+					console.log($('select.fachbereich').val());
+					console.log($('select.studiengang').val());
+					console.log($('select.bundesland').val());
+					lastSelectedOption2=selected;
+					if($('select.fachbereich').val() != "Auswahl Fachbereich:" & $('select.studiengang').val() != 'Auswahl Studiengang:' & $('select.bundesland').val() != 'Auswahl Bundesland:'){
 						$('button.submit').removeAttr("disabled");
 					}
 				}
