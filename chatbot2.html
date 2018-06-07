@@ -206,7 +206,7 @@ button.submit {
 																		<div class="message to ready">
 																			In welchem Bundesland soll das Unternehmen sein?
 																		</div>
-																		<select name="bundesland" data-conv-question="In welchem Bundesland soll das Unternehmen sein?">
+																		<select name="bundesland" class="bundesland" data-conv-question="In welchem Bundesland soll das Unternehmen sein?">
 																			<option value="Auswahl Bundesland:">Auswahl Bundesland:</option>
 																			<option value="BW">Baden-Württemberg</option>
 																			<option value="BY">Bayern</option>
@@ -341,7 +341,7 @@ button.submit {
 				}
 
 			});
-						$('.bundesland').change(function() {
+			$('.bundesland').change(function() {
 				var selected = $(this).val();
 
 				if(selected == 'Auswahl Bundesland:'){
