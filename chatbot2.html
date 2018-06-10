@@ -150,7 +150,7 @@ button.submit {
 (function(doc,found) {
   window.addEventListener('DOMSubtreeModified', function() {
 
-    var yourdiv = doc.querySelector("div.message:nth-child(9)");
+    var yourdiv = doc.querySelector("#messages > div:nth-child(9)");
 
     if(found && !yourdiv){
       // Was there but is gone, do something
