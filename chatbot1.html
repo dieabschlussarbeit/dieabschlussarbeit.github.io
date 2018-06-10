@@ -135,18 +135,69 @@ window.onclick = function(event) {
     if(yourdiv){
       // Found it, do something
       found = true;
-	  $('.submit').show();
-	  $('#userInput').show();
-	  $('.options').hide();
+			setTimeout(function(){
+				$('.submit').show();
+			  $('#userInput').show();
+			  $('.options').hide();
+			}, 1200);
+
 
     }
 
   }, false);
 })(document,false);
 </script>
+<script>
+(function(doc,found) {
+  window.addEventListener('DOMSubtreeModified', function() {
+		var width = window.innerWidth;
+		var height = window.innerHeight;
+		console.log('Breite: ' + width);
+		console.log('Höhe: ' + height);
+		// if (width < 1000 || height < 650){
+		// 	console.log('weiter');
+		// 	//var div = $('.wrapper-messages').get(0);
+		// 	$('.wrapper-messages').animate({
+		// 		scrollTop: $('.wrapper-messages').prop('scrollHeight')
+		// 	}, 100);
+		// 	if (height < 300){
+		// 		$('.wrapper-messages').animate({
+		// 			scrollTop: $('.wrapper-messages').prop('scrollHeight')
+		// 		}, 0);
+		// 	}
+		// }
+
+    //var yourdiv = doc.querySelector(".wrapper-messages");
+
+    // if(found && !yourdiv){
+    //   // Was there but is gone, do something
+    //   found = false;
+		//
+    // }
+
+
+
+			// $('.wrapper-messages').get(0).animate({
+			// 	scrollTop: div.scrollHeight
+			// }, 1);
+
+			//!!!!!!!!!!!!!!!!!!!!!
+			//div.scrollTop = div.scrollHeight;
+
+			//div.parentNode.scrollTop = div.offsetTop;
+
+			//!!!!!!!!!!!!!!!!!!!!!!!
+			// $('.wrapper-messages').animate({
+			// 	scrollTop: $('.wrapper-messages').prop('scrollHeight')
+			// }, 200);
+
+    //}
+
+  }, false);
+})(document,false);
+</script>
 </head>
 <body>
-	<p id="chatV">1</p>
 	<section id="demo">
 	    <div class="vertical-align">
 	        <div class="container">
@@ -156,7 +207,7 @@ window.onclick = function(event) {
 	                        <div id="chat" class="conv-form-wrapper">
 	                            <form action="" method="GET" class="hidden">
 	                                <input type="text" data-conv-question="Hallo! Ich bin dein Chatbot Assistent und kann dir dabei helfen das für dich beste Thema für deine Abschlussarbeit zu finden. Dafür brauche ich ein paar Informationen von dir:" data-no-answer="true">
-	                                <select name="fachbereich" data-callback="storeState" data-conv-question="
+	                                <select name="fachbereich" class="fachbereich" data-callback="storeState" data-conv-question="
 Was ist dein Fachbereich?">
 							<script>
 							var agent = navigator.userAgent.toLowerCase();
@@ -299,12 +350,12 @@ Was ist dein Fachbereich?">
 	</section>
 	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="dist/autosize.min.js"></script><script>
-							var agent = navigator.userAgent.toLowerCase();
-							var name = "firefox";
-							if (agent.indexOf(name.toLowerCase())>-1) {
-							}
-							else{document.write('<option  >Auswahl</option>');}
-							</script>
+							// var agent = navigator.userAgent.toLowerCase();
+							// var name = "firefox";
+							// if (agent.indexOf(name.toLowerCase())>-1) {
+							// }
+							// else{document.write('<option  >Auswahl</option>');}
+							// </script>
 	<script type="text/javascript" src="dist/jquery.convform.js"></script>
 
 	<script>
@@ -355,7 +406,7 @@ Was ist dein Fachbereich?">
 				//var studiengang = data.get("studiengang");
 				//var bundesland = data.get("bundesland");
 				//var email = data.get("email");
-				var chatV = $('#chatV').text();
+				var chatV = $('#chatV').val();
 				console.log(chatV);
 				//var submitString = "fach=" + fachbereich + "&stud=" + studiengang + "&bund=" + bundesland + "&em=" + email + "&chatV=" + chatV;
 				var submitString = data + "&chatV=" + chatV
@@ -375,5 +426,6 @@ Was ist dein Fachbereich?">
 			}
 			});
 		</script>
+		<input type="hidden" id="chatV" value="1">
 </body>
 </html>

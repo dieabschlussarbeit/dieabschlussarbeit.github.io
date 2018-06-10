@@ -172,7 +172,6 @@ button.submit {
 </script>
 </head>
 <body>
-	<p id="chatV">2</p>
 	<section id="demo">
 	    <div class="vertical-align">
 	        <div class="container">
@@ -269,7 +268,7 @@ button.submit {
 				//var studiengang = data.get("studiengang");
 				//var bundesland = data.get("bundesland");
 				//var email = data.get("email");
-				var chatV = $('#chatV').text();
+				var chatV = $('#chatV').val();
 				console.log(chatV);
 				//var submitString = "fach=" + fachbereich + "&stud=" + studiengang + "&bund=" + bundesland + "&em=" + email + "&chatV=" + chatV;
 				var submitString = data + "&chatV=" + chatV;
@@ -362,6 +361,6 @@ button.submit {
 			});
 
 		</script>
-
+		<input type="hidden" id="chatV" value="2">
 </body>
 </html>
