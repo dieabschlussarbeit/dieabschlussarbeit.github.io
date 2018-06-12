@@ -135,9 +135,11 @@ window.onclick = function(event) {
     if(yourdiv){
       // Found it, do something
       found = true;
-	  $('.submit').show();
-	  $('#userInput').show();
-	  $('.options').hide();
+			setTimeout(function(){
+				$('.submit').show();
+			  $('#userInput').show();
+			  $('.options').hide();
+			}, 3200);
 
     }
 

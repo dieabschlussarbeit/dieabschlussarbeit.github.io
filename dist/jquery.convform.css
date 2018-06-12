@@ -136,7 +136,7 @@ div#chat.conv-form-wrapper div.wrapper-messages {
     position: relative;
     height: 570px;
     max-height: 71vh;
-    //overflow-y: scroll; //scroll
+    overflow-y: auto; //scroll davor //
 }
 div#chat:before {
     content: '';
@@ -290,7 +290,7 @@ form.convFormDynamic button.submit {
     cursor: pointer;
     border-radius: 8px;
     font-size: 1.1rem;
-    width: 120px																						/*36px;*/
+    width: 120px;/*36px;*/
     height: 35px;
     margin-top: 4px;
     background: #fff;

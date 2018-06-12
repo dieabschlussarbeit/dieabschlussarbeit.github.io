@@ -82,7 +82,7 @@ ConvState.prototype.printQuestion = function(){
             }
         }
         $(this.wrapper).find(this.parameters.inputIdHashTagName).focus();
-    }.bind(this), 500);
+    }.bind(this), 1500);
 };
 ConvState.prototype.printAnswers = function(answers, multiple){
     this.wrapper.find('select.options select.option').remove();																	//div.options div.option
@@ -189,7 +189,7 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
         var parameters = $.extend(true, {}, {
             placeHolder : 'Deine E-Mail (optional)',																/*'Type Here',*/
             typeInputUi : 'textarea',
-            timeOutFirstQuestion : 1200,
+            timeOutFirstQuestion : 1500,
             buttonClassStyle : 'icon2-arrow',
             eventList : {
                 onSubmitForm : function(convState) {
@@ -291,7 +291,7 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
                     state.printQuestion();
                 });
             }, parameters.timeOutFirstQuestion);
-			
+
 			$(inputForm).change(
 				function(e){
                     var input = $(this).val();
@@ -329,7 +329,7 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
                     }
                 }
             });
-			
+
 
             //binds enter to answer submit and change event to search for select possible answers
             $(inputForm).find(parameters.inputIdHashTagName).keypress(function(e){
